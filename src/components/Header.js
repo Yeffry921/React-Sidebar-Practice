@@ -11,48 +11,48 @@ const Header = () => {
         <div className={styles["header-icon"]}>
           <FaGamepad size={70} color="#EFF2F4" />
         </div>
-        <div children={styles["header-links"]}>
+        <div className={styles["header-links"]}>
           <div className={styles.links}>
-            <a href="">
+            <a href="#">
               <AiFillHome size={25} />
               <span>Home</span>
             </a>
           </div>
 
           <div className={styles.links}>
-            <a href="" className={styles.active}>
+            <a href="#" className={styles.active}>
               <AiFillHome size={25} />
               <span>Library</span>
             </a>
           </div>
 
           <div className={styles.links}>
-            <a href="">
+            <a href="#">
               <AiFillHome size={25} />
               <span>About</span>
             </a>
           </div>
 
           <div className={styles.links}>
-            <a href="">
+            <a href="#">
               <AiFillHome size={25} />
               <span>Placeholder</span>
             </a>
           </div>
 
           <div className={styles.links}>
-            <a href="">
+            <a href="#">
               <AiFillHome size={25} />
               <span>Placeholder</span>
             </a>
           </div>
+        </div>
 
-          <div className={`${styles.links}`}>
-            <a href="">
-              <FiLogOut size={25} />
-              <span>Logout</span>
-            </a>
-          </div>
+        <div className={`${styles.links} ${styles.logout}`}>
+          <a href="#" className={`${styles.active}`}>
+            <FiLogOut size={25} />
+            <span>Logout</span>
+          </a>
         </div>
       </nav>
     </header>
