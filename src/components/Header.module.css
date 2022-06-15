@@ -23,15 +23,31 @@ span {
 .active {
   background-color: #667A8A;
 }
+
 .header-nav {
   padding: .75em .85em;
+  height: 100%;
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
 }
 
 .header-icon {
   margin-bottom: 1.5em;
 }
 
+.header-links .logout {
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
 .links {
   margin: 1.05em 0;
 }
 
+.header-nav .logout {
+  /* position: absolute;
+  bottom: 0;
+  left: 10; */
+  margin-top: auto;
+}
