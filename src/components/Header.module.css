@@ -1,0 +1,13 @@
+.header {
+  background-color: #031C30;
+  width: 250px;
+  height: 100vh;
+}
+
+.header-nav {
+  padding: .75em .85em;
+}
+
+.header-icon {
+  margin-bottom: 1.5em;
+}
