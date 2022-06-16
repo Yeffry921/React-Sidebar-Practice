@@ -1,6 +1,15 @@
-import { AiFillHome } from "react-icons/ai";
-import { FaGamepad } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
+import { FaGamepad, FaThList } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
+import { IoLibrarySharp } from "react-icons/io5";
+import { FcAbout } from "react-icons/fc";
+import {
+  AiOutlineGift,
+  AiOutlineFire,
+  AiFillHome,
+  AiFillAppstore,
+} from "react-icons/ai";
 
 import styles from "./Header.module.css";
 
@@ -13,37 +22,51 @@ const Header = () => {
       <nav className={styles.nav}>
         <ul>
           <li className={styles.links}>
-            <a href="#">
+            <Link to="/">
               <AiFillHome size={25} />
               <span>Home</span>
-            </a>
+            </Link>
           </li>
 
           <li className={styles.links}>
             <a href="#" className={styles.active}>
-              <AiFillHome size={25} />
-              <span>Library</span>
+              <IoLibrarySharp size={25} />
+              <span>My Library</span>
             </a>
           </li>
 
           <li className={styles.links}>
             <a href="#">
-              <AiFillHome size={25} />
+              <AiOutlineGift size={25} />
+              <span>Wishlist</span>
+            </a>
+          </li>
+
+          <li className={styles.links}>
+            <a href="#">
+              <AiOutlineFire size={25} />
+              <span>New Releases</span>
+            </a>
+          </li>
+
+          <li className={styles.links}>
+            <Link to="/about">
+              <FcAbout size={25} />
               <span>About</span>
+            </Link>
+          </li>
+
+          <li className={styles.links}>
+            <a href="#">
+              <FaThList size={25} />
+              <span>Platforms</span>
             </a>
           </li>
 
           <li className={styles.links}>
             <a href="#">
-              <AiFillHome size={25} />
-              <span>Placeholder</span>
-            </a>
-          </li>
-
-          <li className={styles.links}>
-            <a href="#">
-              <AiFillHome size={25} />
-              <span>Placeholder</span>
+              <AiFillAppstore size={25} />
+              <span>Genres</span>
             </a>
           </li>
         </ul>
