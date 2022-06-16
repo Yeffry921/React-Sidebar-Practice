@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink as Link } from "react-router-dom";
 
 import { FaGamepad, FaThList } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
@@ -22,14 +22,17 @@ const Header = () => {
       <nav className={styles.nav}>
         <ul>
           <li className={styles.links}>
-            <Link to="/">
+            <Link
+              to="/"
+              className={({ isActive }) => (isActive ? styles.active : null)}
+            >
               <AiFillHome size={25} />
               <span>Home</span>
             </Link>
           </li>
 
           <li className={styles.links}>
-            <a href="#" className={styles.active}>
+            <a href="#">
               <IoLibrarySharp size={25} />
               <span>My Library</span>
             </a>
@@ -50,7 +53,10 @@ const Header = () => {
           </li>
 
           <li className={styles.links}>
-            <Link to="/about">
+            <Link
+              to="/about"
+              className={({ isActive }) => (isActive ? styles.active : null)}
+            >
               <FcAbout size={25} />
               <span>About</span>
             </Link>
