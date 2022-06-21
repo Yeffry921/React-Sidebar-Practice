@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+}
+
+.body-output {
+  border: 5px solid green;
+}
+
+.body-container {
+  width: 100%;
+}
