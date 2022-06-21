@@ -32,6 +32,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Make images easier to work with */
