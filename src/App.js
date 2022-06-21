@@ -1,31 +1,28 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-import styles from './layout.module.css'
+import styles from "./layout.module.css";
 
-import Header from "./components/Side";
+import Sidebar from "./components/Sidebar";
 import Home from "./components/Home";
 import About from "./components/About";
+import MainSearch from "./components/MainSearch";
 
 function App() {
   return (
     <React.Fragment>
       <div className={styles.container}>
-        <div className={styles.sidebar}>
-          <Header />
-        </div>
+        <Sidebar />
 
-        <div className={styles["body-container"]}>
-          <div className="body-search">
-            <input type="text" placeholder="Placeholder input"/>
-          </div>
+        <main className={styles["main-container"]}>
+          <MainSearch />
           <div className={styles["body-output"]}>
             <Routes>
               <Route path="/" element={<Home />}></Route>
               <Route path="/about" element={<About />}></Route>
             </Routes>
           </div>
-        </div>
+        </main>
       </div>
     </React.Fragment>
   );
