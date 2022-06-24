@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import styles from "./layout.module.css";
 
 import Sidebar from "./components/Sidebar";
-import Home from "./components/Home";
+import Showcase from "./components/Showcase";
 import About from "./components/About";
 import MainSearch from "./components/MainSearch";
 
@@ -31,7 +31,7 @@ function App() {
         <main className={styles["main-container"]}>
           <MainSearch />
           <Routes>
-            <Route path="/" element={<Home showcase={showcase}/>}></Route>
+            <Route path="/" element={<Showcase title="Popular Releases" showcase={showcase}/>}></Route>
             <Route path="/about" element={<About />}></Route>
           </Routes>
         </main>
