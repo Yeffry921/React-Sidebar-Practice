@@ -12,19 +12,24 @@
   border-bottom-right-radius: 0px;
   font-size: 18px;
   padding: 8px;
-  width: 60%;
+  width: 100%;
 }
 .search input::placeholder {
   font-size: 0.85rem;
 }
+.search {
+  flex: 0 0 75%;
+}
 
 .searchIcon {
-  width: 50px;
+  width: 40px;
   background-color: white;
   display: grid;
   place-items: center;
 }
-
+.searchIcon svg {
+  width: 25px;
+}
 input:focus {
   outline: none;
 }
