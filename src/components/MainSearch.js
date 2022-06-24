@@ -1,24 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
 import placeholder from "../assets/profile-placeholder.png";
 import styles from "./MainSearch.module.css";
+import SearchBar from "./SearchBar";
 
-import { GrAdd } from 'react-icons/gr'
+const data = [
+  { title: "New game" },
+  { title: "New game2" },
+  { title: "Hello" },
+];
 
 const MainSearch = () => {
   return (
     <React.Fragment>
       <div className={styles["main-search"]}>
-        <form>
-          <input type="search" placeholder="Search games..." />
-        </form>
-        
-
-        <button>
-          <GrAdd size={25}/>
-        </button>
-
-        <img src={placeholder} alt="" className="" />
+        <div className={styles.wrapper}>
+          <SearchBar placeholder="Search games..." data={data} />
+          <img src={placeholder} alt="" className="" />
+        </div>
       </div>
     </React.Fragment>
   );
