@@ -4,16 +4,16 @@ import CloseIcon from '@mui/icons-material/Close';
 
 import "./SearchBar.css";
 
-const SearchBar = ({ placeholder, data }) => {
+const SearchBar = ({ placeholder, data, onGetSearch }) => {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState('')
-
+  
   const handleFilter = (event) => {
     const searchTerm = event.target.value
     setWordEntered(searchTerm)
 
     const newFilter = data.filter((value) => {
-      return value.title.toLowerCase().includes(searchTerm.toLowerCase())
+      return value.name.toLowerCase().includes(searchTerm.toLowerCase())
     })
     if (searchTerm === '') {
       setFilteredData([])
@@ -21,6 +21,7 @@ const SearchBar = ({ placeholder, data }) => {
       setFilteredData(newFilter)
     }
 
+    onGetSearch(searchTerm)
   }
 
   const clearInput = () => {
@@ -40,8 +41,8 @@ const SearchBar = ({ placeholder, data }) => {
         <div className="dataResult">
           {filteredData.slice(0, 15).map((value, key) => {
             return (
-              <a className="dataItem" href={value.link} target="#">
-                <p>{value.title}</p>
+              <a className="dataItem" target="#" key={key}>
+                <p>{value.name}</p>
               </a>
             )
           })}
