@@ -42,6 +42,7 @@ const SearchBar = ({ placeholder, data, onGetSearch }) => {
           {filteredData.slice(0, 15).map((value, key) => {
             return (
               <a className="dataItem" target="#" key={key}>
+                <img src={value.background_image} alt="game image" className='dataItem-image'/>
                 <p>{value.name}</p>
               </a>
             )
