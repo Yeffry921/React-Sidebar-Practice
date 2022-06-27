@@ -31,7 +31,7 @@ const MainSearch = () => {
       <div className={styles["main-search"]}>
         <div className={styles.wrapper}>
           <SearchBar placeholder="Search games..." data={data} onGetSearch={getSearchTerm} />
-          <img src={placeholder} alt="" className="" />
+          {/* <img src={placeholder} alt="" className="" /> */}
         </div>
       </div>
     </React.Fragment>
