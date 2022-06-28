@@ -46,7 +46,7 @@ const Sidebar = () => {
           </li>
 
           <li className={styles.links}>
-            <Link to="/newreleases" className={({ isActive }) => (isActive ? styles.active : null)}>
+            <Link to="/new" className={({ isActive }) => (isActive ? styles.active : null)}>
               <AiOutlineFire size={25} />
               <span>New Releases</span>
             </Link>
