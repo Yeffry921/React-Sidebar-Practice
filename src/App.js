@@ -7,6 +7,7 @@ import Sidebar from "./components/Sidebar";
 import About from "./components/pages/About";
 import MainSearch from "./components/MainSearch";
 import Home from "./components/pages/Home";
+import NewReleases from "./components/NewReleases";
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
           <MainSearch />
           <Routes>
             <Route path="/" element={<Home /> }></Route>
-            <Route path="/new" element={<About />}></Route>
+            <Route path="/new" element={<NewReleases />}></Route>
             <Route path="/about" element={<About />}></Route>
           </Routes>
         </main>
