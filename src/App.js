@@ -25,8 +25,8 @@ function App() {
         <main className={styles["main-container"]}>
           <MainSearch onGetId={getGameId}/>
           <Routes>
-            <Route path="/" element={<Home /> }></Route>
-            <Route path="/new" element={<NewReleases />}></Route>
+            <Route path="/" element={<Home onGetId={getGameId} /> }></Route>
+            <Route path="/new" element={<NewReleases onGetId={getGameId} />}></Route>
             <Route path="/about" element={<About />}></Route>
             <Route path="/game" element={<GameInfo gameId={id} />} ></Route>
           </Routes>
