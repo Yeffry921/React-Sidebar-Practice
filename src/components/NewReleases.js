@@ -9,12 +9,16 @@ let day = ("0" + date_ob.getDate()).slice(-2);
 let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
 let year = date_ob.getFullYear() - 1;
 
-const NewReleases = () => {
+const NewReleases = ({ onGetId }) => {
   const [showcase, setShowcase] = useState([]);
 
   useEffect(() => {
     fetchShowcase();
   }, []);
+
+  const handleGetId = (id) => {
+    onGetId(id)
+  } 
 
   const fetchShowcase = async () => {
     const data = await fetch(
@@ -25,7 +29,7 @@ const NewReleases = () => {
   };
 
   return (
-    <Showcase title="New Releases" showcase={showcase} />
+    <Showcase title="New Releases" showcase={showcase} onHandleId={handleGetId} />
   )
 }
 
