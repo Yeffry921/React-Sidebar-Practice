@@ -1,11 +1,14 @@
+import Wrapper from "./UI/Wrapper";
+import {Link} from 'react-router-dom'
+
 import styles from "./Showcase.module.css";
 
-const Showcase = (props) => {
+const Showcase = ({ title, showcase, onHandleId }) => {
   return (
-    <section className={styles.showcase}>
-      <h1>{props.title}</h1>
+    <Wrapper className={styles.showcase}>
+      <h1>{title}</h1>
       <div className={styles['showcase-wrapper']}>
-        {props.showcase.map((game) => {
+        {showcase.map((game) => {
           return (
             <div className={styles.card} key={game.id}>
               <div className={styles["card-header"]}>
@@ -22,13 +25,13 @@ const Showcase = (props) => {
                     );
                   })}
                 </ul>
-                <h3>{game.name}</h3>
+                <Link to="/game" onClick={() => onHandleId(game.id)}>{game.name}</Link>
               </div>
             </div>
           );
         })}
       </div>
-    </section>
+    </Wrapper>
   );
 };
 
