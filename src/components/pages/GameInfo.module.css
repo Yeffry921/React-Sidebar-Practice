@@ -1,0 +1,41 @@
+.gameLayout {
+  padding: 1em 1.5em;
+}
+
+.platforms {
+  list-style: none;
+  color: white;
+  padding-left: 0;
+}
+
+.platforms li {
+  font-size: .80rem;
+}
+
+.gameLayout h1 {
+  color: white;
+  font-size: clamp(18px, 4vw, 42px);
+  text-align: center;
+  margin-top: .5em;
+}
+.description h2{
+  color: white;
+  padding: .5em 0;
+}
+
+.description p {
+  color: white;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.description .hide {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 10;
+  overflow: hidden;
+}
+
+.description .show {
+  
+}
