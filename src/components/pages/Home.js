@@ -1,12 +1,16 @@
 import React, {useState, useEffect} from "react"
 import Showcase from "../Showcase"
 
-const Home = () => {
+const Home = ({ onGetId }) => {
   const [showcase, setShowcase] = useState([]);
 
   useEffect(() => {
     fetchShowcase();
   }, []);
+
+  const handleGetId = (id) => {
+    onGetId(id)
+  } 
 
   const fetchShowcase = async () => {
     const data = await fetch(
@@ -17,7 +21,7 @@ const Home = () => {
   };
   return (
     <React.Fragment>
-      <Showcase title="Popular Releases" showcase={showcase} />
+      <Showcase title="Popular Releases" showcase={showcase} onHandleId={handleGetId}/>
     </React.Fragment>
   )
 }
