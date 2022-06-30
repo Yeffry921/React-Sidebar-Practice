@@ -6,6 +6,34 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, auto));
   gap: 45px;
 }
+.controls {
+  margin-top: .5em;
+  margin-left: .75em;
+}
+.ctrlBtn {
+  background-color: #353535;
+  width: 30px;
+  height: 25px;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .2s ease-in;
+}
+
+.ctrlSvg {
+  fill: white;
+}
+
+.ctrlBtn:hover {
+  background-color: white;
+}
+
+.ctrlBtn:hover .ctrlSvg {
+  fill: #000;
+}
+
 .card {
   background-color: #fff;
   border-radius: 10px;
@@ -52,6 +80,7 @@
   background-repeat: repeat-x;
   border: 1px solid #0b0d0e;
   color: white;
+  font-size: .86rem;
 }
 
  h1 {
