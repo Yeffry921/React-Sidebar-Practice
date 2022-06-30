@@ -1,15 +1,23 @@
 .gameLayout {
-  padding: 1em 1.5em;
+  padding: 1em 0;
 }
-
+.content {
+  padding: 0 1em;
+}
 .platforms {
   list-style: none;
   color: white;
   padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .platforms li {
-  font-size: .80rem;
+  font-size: .70rem;
+  background-color: lightblue;
+  margin: .35em .45em;
+  border-radius: 5px;
+  padding: .5em;
 }
 
 .gameLayout h1 {
@@ -25,7 +33,7 @@
 
 .description p {
   color: white;
-  font-size: 0.875rem;
+  font-size: clamp(.77rem, 4vw, 42px);
   line-height: 1.25rem;
 }
 
@@ -36,6 +44,35 @@
   overflow: hidden;
 }
 
-.description .show {
-  
+.flexWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+/* font-size: clamp(16px, 3vw, 32px); */
+.flexWrapper .column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-right: 1px solid grey;
+}
+.flexWrapper .column:not(:last-child) {
+  border-right: none;
+}
+
+.primary {
+  color: white;
+  font-size: .75rem;
+}
+
+.secondary {
+  color: lightgray;
+  font-size: .65rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 0 .2em;
+  width: 100%;
+  text-align: center;
+  line-height: 1rem;
 }
