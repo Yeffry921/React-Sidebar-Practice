@@ -5,6 +5,7 @@ import styles from "./GameInfo.module.css";
 
 const GameInfo = ({ gameId }) => {
   const [game, setGame] = useState(null);
+  const [screenshots, setScreenshots] = useState(null)
   const [displayWhole, setDisplayWhole] = useState(false);
 
   useEffect(() => {
@@ -14,14 +15,32 @@ const GameInfo = ({ gameId }) => {
       const response = await data.json();
       setGame(response);
     };
+    searchGame()
 
-    searchGame();
   }, [gameId]);
+  
+  useEffect(() => {
 
-  console.log(game);
+    const searchScreenshots = async () => {
+      const url = `https://rawg.io/api/games/${game.slug}/screenshots?key=6f59240c598f49feaf7fd46a9990b4ff`;
+      const data = await fetch(url);
+      const response = await data.json();
+      setScreenshots(response.results)
+    }
+
+    if (game !== null) {
+      searchScreenshots()
+    };
+    
+    
+  }, [game])
+  
+
+  console.log(screenshots)
   const handleText = () => {
     setDisplayWhole((prevState) => !prevState);
   };
+
 
   return (
     <Wrapper className={styles.gameLayout}>
@@ -68,7 +87,20 @@ const GameInfo = ({ gameId }) => {
             >
               {game.description_raw}
             </p>
-          </div>
+            </div>
+            
+            <div className={styles.screenshots}>
+              <h2>Screenshots</h2>
+              <div className={styles.shots}>
+                {screenshots !== null? screenshots.map((screenshot) => {
+                  return (
+                    <div key={screenshot.id} className={styles.shotItem}>
+                      <img src={screenshot.image}/>
+                    </div>
+                 )
+               }) : <h1>Fail</h1>}
+              </div>
+            </div> 
         </div>
       )}
     </Wrapper>
